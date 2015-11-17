@@ -1,0 +1,24 @@
+.idea
+.settings
+.build
+.beans
+.bowerrc
+.DS_Store
+node_modules
+test/coverage
+test/report/coverage
+/logs
+/cdbs
+*.log
+*.swp
+.editorconfig
+.nodemonignore
+.yo-rc.json
+.npmignore
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
