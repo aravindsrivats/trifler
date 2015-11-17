@@ -2,8 +2,10 @@ doctype
 html
   head
     title #{title}
+    link(href='../trifler/css/app.css', rel='stylesheet')
   body
-    header
-      h1 #{title}
-    section
-      p #{message}
+    include ./header.jade
+    section.trifler
+      div.container
+        p #{message}
+    include ./footer.jade

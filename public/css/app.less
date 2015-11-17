@@ -1,0 +1,62 @@
+@import 'colors';
+@import url(http://fonts.googleapis.com/css?family=Raleway:400);
+html,
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Raleway', 'Helvetica-Neue', 'Myraid-Pro', 'Helvetica', 'Arial', sans-serif;
+    background: @backgroundColor url(../assets/crossword.png) repeat;
+    color: @textColor;
+}
+header {
+    background: @headerBackground;
+    height: 50px;
+    line-height: 50px;
+    padding: 0.3em 0;
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+.logo {
+    background: url(../assets/trifler.png) no-repeat;
+    width: 112px;
+    height: 50px;
+    cursor: pointer;
+}
+.trifler {
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+.trifler:after {
+    content: "";
+    display: block;
+}
+footer,
+.trifler:after {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
