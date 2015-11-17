@@ -9,6 +9,7 @@ module.exports = function eslint(grunt) {
         },
         src: ['index.js',
             'controllers/*.js',
+            'lib/*.js',
             'models/*.js',
             'tasks/*.js'
         ]
