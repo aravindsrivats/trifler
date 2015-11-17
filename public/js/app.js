@@ -1,12 +1,10 @@
 'use strict';
 
-requirejs.config({
-    paths: {}
-});
-
-require([], function() {
-    var app = {
-        initialize: function() {}
-    };
-    app.initialize();
+require(['config'], function(config) {
+    require(['jquery'], function($) {
+        var app = {
+            initialize: function() {}
+        };
+        app.initialize();
+    });
 });
