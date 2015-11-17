@@ -1,10 +1,19 @@
 'use strict';
 
 module.exports = function IndexModel(info) {
-    return {
+    var model = {
         page: 'index',
         title: info.title,
         message: info.message,
-        csrf: info.csrf
+        csrf: info.csrf,
+        trifle: {
+            html: '',
+            css: '',
+            js: ''
+        }
     };
+    if (typeof info.trifle !== 'undefined') {
+        model.trifle = info.trifle;
+    }
+    return model;
 };

@@ -9,13 +9,13 @@ html
       div.container.clearfix
         div.inputbox.left
           span HTML
-          textarea#html
+          textarea#html #{trifle.html}
         div.inputbox.right
           span CSS
-          textarea#css
+          textarea#css #{trifle.css}
         div.inputbox.left
           span Javascript
-          textarea#js
+          textarea#js #{trifle.js}
         div.outputbox.right#display
     include ./footer.jade
     script window.csrf = '#{csrf}';
