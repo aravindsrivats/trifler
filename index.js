@@ -3,27 +3,26 @@
 var express = require('express'),
     kraken = require('kraken-js'),
     debug = require('debug')('trifler'),
-    redis = require('redis'),
-    redisHost = '127.0.0.1',
-    redisPort = 6379,
-    options, app, port, redisClient;
+    TriflerStore = require('./lib/triflerStore'),
+    options, app, port, triflerStore;
 
 options = {
     onconfig: function(config, next) {
-      next(null, config);
+        next(null, config);
     }
 };
 
 app = module.exports = express();
 app.use(kraken(options));
 
-redisClient = redis.createClient(redisPort, redisHost);
-redisClient.on('connect', function() {
-  debug('Redis Store connection established.');
-});
+var redisOptions = {
+    host: '127.0.0.1',
+    port: 6379
+};
+triflerStore = new TriflerStore(redisOptions);
 
 app.use(function(req, res, next) {
-    req.redis = redisClient;
+    req.store = triflerStore;
     next();
 });
 
