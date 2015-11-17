@@ -19,6 +19,11 @@ require(['config'], function(config) {
                             form.appendChild(hiddenField);
                         }
                     }
+                    var hiddenField = document.createElement('input');
+                    hiddenField.setAttribute('type', 'hidden');
+                    hiddenField.setAttribute('name', '_csrf');
+                    hiddenField.setAttribute('value', window.csrf);
+                    form.appendChild(hiddenField);
                     document.body.appendChild(form);
                     form.submit();
                 }
