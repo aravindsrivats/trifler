@@ -18,4 +18,5 @@ html
           textarea#js
         div.outputbox.right#display
     include ./footer.jade
+    script window.csrf = '#{csrf}';
     script(data-main='../trifler/js/app.js' src='/trifler/components/requirejs/require.js')
