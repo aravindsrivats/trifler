@@ -1,5 +1,6 @@
 @import 'colors';
 @import url(http://fonts.googleapis.com/css?family=Raleway:400);
+@textFont: 'Raleway', 'Helvetica-Neue', 'Myraid-Pro', 'Helvetica', 'Arial', sans-serif;
 html,
 body {
     width: 100%;
@@ -9,36 +10,97 @@ body {
     padding: 0;
 }
 body {
-    font-family: 'Raleway', 'Helvetica-Neue', 'Myraid-Pro', 'Helvetica', 'Arial', sans-serif;
+    font-family: @textFont;
     background: @backgroundColor url(../assets/crossword.png) repeat;
     color: @textColor;
 }
 header {
+    position: relative;
     background: @headerBackground;
-    height: 50px;
-    line-height: 50px;
-    padding: 0.3em 0;
+    height: 60px;
+    line-height: 60px;
+    padding: 0;
 }
 .container {
+    position: relative;
     width: 90%;
+    height: 100%;
     margin: 0 auto;
 }
 .logo {
-    background: url(../assets/trifler.png) no-repeat;
+    position: relative;
+    background: url(../assets/trifler.png) no-repeat center;
     width: 112px;
-    height: 50px;
-    cursor: pointer;
+    height: 60px;
+    cursor: pointer
+    margin: 5px 0;
+}
+nav {
+    display: block;
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            height: 60px;
+            line-height: 60px;
+            cursor: pointer;
+            display: inline-block;
+            padding: 0 2em;
+            &:hover {
+                background: rgba(0, 0, 0, 0.4);
+                color: @primaryColor;
+            }
+        }
+    }
 }
 .trifler {
-    min-height: 100%;
+    position: relative;
+    height: 83%;
     margin-bottom: -50px;
+    &:after {
+        content: "";
+        display: block;
+        height: 50px;
+    }
 }
-.trifler:after {
-    content: "";
-    display: block;
+.inputbox,
+.outputbox {
+    position: relative;
+    width: 48%;
+    height: 48%;
+    padding: 1%;
+    span {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 0.3em;
+        font-size: 85%;
+        color: @grayColor;
+        border: solid thin @grayColor;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    &:hover span {
+        opacity: 0;
+    }
+    textarea {
+        width: 98%;
+        height: 97%;
+        padding: 1%;
+        font-family: @textFont;
+        display: block;
+        resize: none;
+        white-space: pre;
+        word-wrap: normal;
+        &:focus {
+            outline: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+    }
 }
-footer,
-.trifler:after {
+footer {
     height: 50px;
     line-height: 50px;
     text-align: center;
@@ -49,14 +111,14 @@ footer,
 .right {
     float: right;
 }
-.clearfix:before,
-.clearfix:after {
-    content: "";
-    display: table;
-}
-.clearfix:after {
-    clear: both;
-}
 .clearfix {
     zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }

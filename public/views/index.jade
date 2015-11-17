@@ -6,6 +6,16 @@ html
   body
     include ./header.jade
     section.trifler
-      div.container
-        p #{message}
+      div.container.clearfix
+        div.inputbox.left
+          span HTML
+          textarea#html
+        div.inputbox.right
+          span CSS
+          textarea#css
+        div.inputbox.left
+          span Javascript
+          textarea#js
+        div.outputbox.right#display
     include ./footer.jade
+    script(data-main='../trifler/js/app.js' src='/trifler/components/requirejs/require.js')
