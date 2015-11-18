@@ -24,7 +24,7 @@ header {
 }
 .container {
     position: relative;
-    width: 90%;
+    width: 95%;
     height: 100%;
     margin: 0 auto;
 }
@@ -55,20 +55,20 @@ nav {
 }
 .trifler {
     position: relative;
-    height: 83%;
-    margin-bottom: -50px;
+    height: 85%;
+    margin-bottom: -20px;
     &:after {
         content: "";
         display: block;
-        height: 50px;
+        height: 20px;
     }
 }
 .inputbox,
 .outputbox {
     position: relative;
-    width: 48%;
-    height: 48%;
-    padding: 1%;
+    width: 49%;
+    height: 49%;
+    padding: 0.5%;
     .placeholder {
         position: absolute;
         top: 20px;
@@ -87,9 +87,9 @@ nav {
     }
 }
 .inputbox textarea.default {
-    width: 98%;
-    height: 97%;
-    padding: 1%;
+    width: 99%;
+    height: 98%;
+    padding: 0.5%;
     font-family: @editFont;
     font-size: 100%;
     display: block;
@@ -107,13 +107,24 @@ nav {
     border: 0 !important;
     width: 98%;
     display: block;
-    height: 95%;
+    height: 96%;
     padding: 1%;
 }
 footer {
-    height: 50px;
-    line-height: 50px;
+    height: 20px;
+    line-height: 20px;
     text-align: center;
+    p {
+        font-size: 80%;
+        a,
+        a:visited {
+            color: @primaryColor;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
 .left {
     float: left;
