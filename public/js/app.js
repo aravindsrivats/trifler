@@ -1,7 +1,7 @@
 'use strict';
 
 require(['config'], function(config) {
-    require(['jquery'], function($) {
+    require(['jquery', 'codemirror', 'codemirror/mode/xml/xml', 'codemirror/mode/javascript/javascript', 'codemirror/mode/css/css'], function($, cm) {
         var app = {
             initialize: function() {
                 function post(path, params, method) {
@@ -27,12 +27,29 @@ require(['config'], function(config) {
                     document.body.appendChild(form);
                     form.submit();
                 }
+
+                function setupEditor(textarea, mode, options) {
+                    var settings = {
+                        mode: mode,
+                        lineNumbers: true
+                    };
+                    for (var key in options) {
+                        settings[key] = options[key];
+                    }
+                    return cm.fromTextArea(document.getElementById(textarea), settings);
+                }
+
                 $(document).ready(function() {
+                    window.htmlcm = setupEditor('html', 'xml', {
+                        htmlMode: true
+                    });
+                    window.csscm = setupEditor('css', 'css');
+                    window.jscm = setupEditor('js', 'javascript');
                     $('#save').click(function() {
                         var params = {
-                            html: $('#html').val(),
-                            css: $('#css').val(),
-                            js: $('#js').val()
+                            html: window.htmlcm.getValue(),
+                            css: window.csscm.getValue(),
+                            js: window.jscm.getValue()
                         };
                         post('/trifler/save/', params);
                     });

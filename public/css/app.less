@@ -69,10 +69,11 @@ nav {
     width: 48%;
     height: 48%;
     padding: 1%;
-    span {
+    .placeholder {
         position: absolute;
         top: 20px;
         right: 20px;
+        z-index: 100;
         padding: 0.3em;
         font-size: 85%;
         color: @grayColor;
@@ -81,10 +82,10 @@ nav {
         -moz-transition: all 0.3s;
         transition: all 0.3s;
     }
-    &:hover span {
+    &:hover .placeholder {
         opacity: 0;
     }
-    textarea {
+    textarea.default {
         width: 98%;
         height: 97%;
         padding: 1%;

@@ -3,19 +3,20 @@ html
   head
     title #{title}
     link(href='../trifler/css/app.css', rel='stylesheet')
+    link(href='../trifler/components/codemirror/lib/codemirror.css', rel='stylesheet')
   body
     include ./header.jade
     section.trifler
       div.container.clearfix
         div.inputbox.left
-          span HTML
-          textarea#html #{trifle.html}
+          span.placeholder HTML
+          textarea.default#html #{trifle.html}
         div.inputbox.right
-          span CSS
-          textarea#css #{trifle.css}
+          span.placeholder CSS
+          textarea.default#css #{trifle.css}
         div.inputbox.left
-          span Javascript
-          textarea#js #{trifle.js}
+          span.placeholder Javascript
+          textarea.default#js #{trifle.js}
         div.outputbox.right#display
     include ./footer.jade
     script window.csrf = '#{csrf}';
