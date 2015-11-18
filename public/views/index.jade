@@ -18,6 +18,8 @@ html
           span.placeholder Javascript
           textarea.default#js #{trifle.js}
         div.outputbox.right#display
+          span.placeholder Trifle
+          iframe.result(sandbox='allow-forms allow-popups allow-scripts allow-same-origin allow-modals', frameborder='0')
     include ./footer.jade
     script window.csrf = '#{csrf}';
     script(data-main='../trifler/js/app.js' src='/trifler/components/requirejs/require.js')

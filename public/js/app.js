@@ -1,7 +1,7 @@
 'use strict';
 
 require(['config'], function(config) {
-    require(['jquery', 'codemirror', 'codemirror/mode/xml/xml', 'codemirror/mode/javascript/javascript', 'codemirror/mode/css/css'], function($, cm) {
+    require(['jquery', 'codemirror', 'jade!../views/iframe/head', 'jade!../views/iframe/body', 'codemirror/mode/xml/xml', 'codemirror/mode/javascript/javascript', 'codemirror/mode/css/css'], function($, cm, headFrame, bodyFrame) {
         var app = {
             initialize: function() {
                 function post(path, params, method) {
@@ -52,6 +52,17 @@ require(['config'], function(config) {
                             js: window.jscm.getValue()
                         };
                         post('/trifler/save/', params);
+                    });
+                    $('#run').click(function() {
+                        var head = {
+                            title: 'By Trifler',
+                            css: window.csscm.getValue(),
+                            js: window.jscm.getValue()
+                        };]
+                        $('.result').contents().find('head').html(headFrame(head));
+                        $('.result').contents().find('body').html(bodyFrame({
+                            html: window.htmlcm.getValue()
+                        }));
                     });
                 });
             }

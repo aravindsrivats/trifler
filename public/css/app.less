@@ -85,22 +85,30 @@ nav {
     &:hover .placeholder {
         opacity: 0;
     }
-    textarea.default {
-        width: 98%;
-        height: 97%;
-        padding: 1%;
-        font-family: @editFont;
-        font-size: 100%;
-        display: block;
-        resize: none;
-        white-space: pre;
-        word-wrap: normal;
-        &:focus {
-            outline: 0;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-        }
+}
+.inputbox textarea.default {
+    width: 98%;
+    height: 97%;
+    padding: 1%;
+    font-family: @editFont;
+    font-size: 100%;
+    display: block;
+    resize: none;
+    white-space: pre;
+    word-wrap: normal;
+    &:focus {
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
     }
+}
+.outputbox .result {
+    background: @textColor;
+    border: 0 !important;
+    width: 98%;
+    display: block;
+    height: 95%;
+    padding: 1%;
 }
 footer {
     height: 50px;

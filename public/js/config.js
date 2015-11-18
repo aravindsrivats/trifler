@@ -3,7 +3,8 @@
 requirejs.config({
     baseUrl: '/trifler/js',
     paths: {
-        jquery: '../components/jquery/dist/jquery.min'
+        jquery: '../components/jquery/dist/jquery.min',
+        jade: '../components/require-jade/jade'
     },
     packages: [{
         name: "codemirror",
