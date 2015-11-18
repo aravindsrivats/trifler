@@ -1,7 +1,7 @@
 'use strict';
 
 require(['config'], function(config) {
-    require(['jquery', 'codemirror', 'jade!../views/iframe/head', 'jade!../views/iframe/body', 'codemirror/mode/xml/xml', 'codemirror/mode/javascript/javascript', 'codemirror/mode/css/css'], function($, cm, headFrame, bodyFrame) {
+    require(['jquery', 'codemirror', 'jade!../views/iframe/head', 'jade!../views/iframe/body', 'beautify/beautify', 'beautify/beautify-css', 'beautify/beautify-html', 'codemirror/mode/xml/xml', 'codemirror/mode/javascript/javascript', 'codemirror/mode/css/css'], function($, cm, headFrame, bodyFrame, jsbeauty, cssbeauty, htmlbeauty) {
         var app = {
             initialize: function() {
                 function post(path, params, method) {
@@ -70,6 +70,11 @@ require(['config'], function(config) {
                             html: window.htmlcm.getValue()
                         }));
                         attachJS('frame', window.jscm.getValue());
+                    });
+                    $('#beautify').click(function() {
+                        window.htmlcm.setValue(htmlbeauty.html_beautify(window.htmlcm.getValue()));
+                        window.csscm.setValue(cssbeauty.css_beautify(window.csscm.getValue()));
+                        window.jscm.setValue(jsbeauty.js_beautify(window.jscm.getValue()));
                     });
                 });
             }
