@@ -58,7 +58,7 @@ require(['config'], function(config) {
                             title: 'By Trifler',
                             css: window.csscm.getValue(),
                             js: window.jscm.getValue()
-                        };]
+                        };
                         $('.result').contents().find('head').html(headFrame(head));
                         $('.result').contents().find('body').html(bodyFrame({
                             html: window.htmlcm.getValue()
