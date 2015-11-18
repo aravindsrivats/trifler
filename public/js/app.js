@@ -39,6 +39,14 @@ require(['config'], function(config) {
                     return cm.fromTextArea(document.getElementById(textarea), settings);
                 }
 
+                function attachJS(id, js) {
+                    var iframe = document.getElementById(id);
+                    var script = iframe.contentWindow.document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.innerHTML = js;
+                    iframe.contentWindow.document.body.appendChild(script);
+                }
+
                 $(document).ready(function() {
                     window.htmlcm = setupEditor('html', 'xml', {
                         htmlMode: true
@@ -54,15 +62,14 @@ require(['config'], function(config) {
                         post('/trifler/save/', params);
                     });
                     $('#run').click(function() {
-                        var head = {
+                        $('.result').contents().find('head').html(headFrame({
                             title: 'By Trifler',
-                            css: window.csscm.getValue(),
-                            js: window.jscm.getValue()
-                        };
-                        $('.result').contents().find('head').html(headFrame(head));
+                            css: window.csscm.getValue()
+                        }));
                         $('.result').contents().find('body').html(bodyFrame({
                             html: window.htmlcm.getValue()
                         }));
+                        attachJS('frame', window.jscm.getValue());
                     });
                 });
             }
