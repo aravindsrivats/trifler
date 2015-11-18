@@ -31,7 +31,8 @@ module.exports = function(router) {
             trifle.js = '';
         } else {
             trifle.js = uglifyjs(req.body.js, {
-                fromString: true
+                fromString: true,
+                mangle: false
             }).code;
             debug('Minified JS: ' + trifle.js);
         }
