@@ -1,6 +1,7 @@
 'use strict';
 
 var IndexModel = require('../models/index'),
+    TrifleModel = require('../models/trifle'),
     debug = require('debug')('trifler');
 
 module.exports = function(router) {
@@ -24,8 +25,8 @@ module.exports = function(router) {
                 debug('A trifle for the key could not be found!');
             }
             else {
-                debug('Selected trifle: ' + JSON.stringify(trifle));
-                info.trifle = trifle;
+                info.trifle = new TrifleModel(trifle);
+                debug('Selected trifle: ' + JSON.stringify(info.trifle));
             }
             res.render('index', new IndexModel(info));
         });

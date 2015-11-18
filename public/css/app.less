@@ -1,6 +1,7 @@
 @import 'colors';
 @import url(http://fonts.googleapis.com/css?family=Raleway:400);
 @textFont: 'Raleway', 'Helvetica-Neue', 'Myraid-Pro', 'Helvetica', 'Arial', sans-serif;
+@editFont: 'Myraid-Pro', 'Helvetica', 'Arial', sans-serif;
 html,
 body {
     width: 100%;
@@ -32,8 +33,7 @@ header {
     background: url(../assets/trifler.png) no-repeat center;
     width: 112px;
     height: 60px;
-    cursor: pointer
-    margin: 5px 0;
+    cursor:pointer margin: 5px 0;
 }
 nav {
     display: block;
@@ -88,7 +88,8 @@ nav {
         width: 98%;
         height: 97%;
         padding: 1%;
-        font-family: @textFont;
+        font-family: @editFont;
+        font-size: 100%;
         display: block;
         resize: none;
         white-space: pre;
