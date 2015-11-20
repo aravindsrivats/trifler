@@ -1,6 +1,11 @@
 header
   div.container.clearfix
     div.logo.left
+    div#trifle-info.left
+      input(type='text' name='title' id='title' placeholder='Your Trifle Title' value=trifle.title)
+      select#library(name='library')
+        each library in libraries
+          option(value=library.address, css=library.css, rel=library.rel selected=library.selected) #{library.label}
     nav.right
       ul
         li#run Trifle

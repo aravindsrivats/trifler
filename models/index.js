@@ -6,7 +6,9 @@ module.exports = function IndexModel(info) {
         title: info.title,
         message: info.message,
         csrf: info.csrf,
+        libraries: info.libraries,
         trifle: {
+            title: '',
             html: '',
             css: '',
             js: ''

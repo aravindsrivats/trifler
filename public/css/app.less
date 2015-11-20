@@ -35,6 +35,46 @@ header {
     height: 60px;
     cursor:pointer margin: 5px 0;
 }
+#trifle-info {
+    width: 50%;
+    margin: 0 0 0 10%;
+    height: 60px;
+    text-align: right;
+    input[name="title"] {
+        padding: 1%;
+        color: @inputColor;
+        height: 16px;
+        font-size: 90%;
+        width: 40%;
+        outline: 0;
+        display: inline-block;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border: solid thin @grayColor;
+        &:focus {
+            border: solid thin @primaryColor;
+            outline: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+    }
+    select {
+        display: inline-block;
+        margin: 0 0 0 5%;
+        width: 30%;
+        font-size: 90%;
+        height: 30px;
+        padding: 1%;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        color: @inputColor;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: url(../assets/library.png) 95% no-repeat @textColor;
+    }
+}
 nav {
     display: block;
     ul {

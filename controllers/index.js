@@ -2,6 +2,7 @@
 
 var IndexModel = require('../models/index'),
     TrifleModel = require('../models/trifle'),
+    libraries = require('../config/library'),
     debug = require('debug')('trifler');
 
 module.exports = function(router) {
@@ -9,7 +10,8 @@ module.exports = function(router) {
         var info = {
             title: 'Trifler',
             message: 'Your open source alternative to jsFiddle.',
-            csrf: res.locals._csrf
+            csrf: res.locals._csrf,
+            libraries: libraries
         };
         res.render('index', new IndexModel(info));
     });
@@ -18,7 +20,8 @@ module.exports = function(router) {
         var info = {
             title: 'Trifler',
             message: 'Your open source alternative to jsFiddle.',
-            csrf: res.locals._csrf
+            csrf: res.locals._csrf,
+            libraries: libraries
         };
         req.store.get(req.params.key, function(error, trifle) {
             if(error) {

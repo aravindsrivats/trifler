@@ -1,0 +1,27 @@
+[{
+    "label": "jQuery 2.1.4",
+    "address": "https://code.jquery.com/jquery-2.1.4.min.js"
+}, {
+    "label": "jQuery 1.11.3",
+    "address": "https://code.jquery.com/jquery-1.11.3.min.js"
+}, {
+    "label": "jQuery Migrate 1.2.1",
+    "address": "https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+}, {
+    "label": "jQuery UI 1.11.4",
+    "address": "https://code.jquery.com/ui/1.11.4/jquery-ui.min.js",
+    "rel": "https://code.jquery.com/jquery-1.11.3.min.js"
+}, {
+    "label": "jQuery UI 1.10.4",
+    "address": "https://code.jquery.com/ui/1.10.4/jquery-ui.min.js",
+    "rel": "https://code.jquery.com/jquery-1.11.3.min.js"
+}, {
+    "label": "jQuery Mobile 1.4.5",
+    "address": "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js",
+    "css": "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css",
+    "rel": "https://code.jquery.com/jquery-1.11.3.min.js"
+}, {
+    "label": "No Library",
+    "address": "none",
+    "selected": "true"
+}]
